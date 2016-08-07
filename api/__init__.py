@@ -1,7 +1,7 @@
 from flask import jsonify
 from api.modules.issues import issues
 from api.modules.questions import questions
-from api.modules.words import words
+from api.modules.words import words, responseWord
 
 
 def getIssue(id):
@@ -42,3 +42,6 @@ class Routes:
     def word(self, id_question, id_issue):
         words.choiceWords(id_question, id_issue)
         return words.Words.choicedWords
+
+    def getResponseWord(self, word, letter):
+        return responseWord.Response.validLetter(responseWord.Response, word, letter)

@@ -26,6 +26,14 @@ def getWord():
             'word': words.shuffleWords(Words)
         })
 
+@ app.route("/api/v1/word-response", methods=['POST'])
+def getWordResponse():
+    if not request.json:
+        abort(400)
+    return jsonify({
+        'response': Routes.getResponseWord(Routes, request.json['word'], request.json['letter'])
+    })
+
 @ app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)

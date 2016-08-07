@@ -12,14 +12,12 @@ class ResponseWords(unittest.TestCase):
         self.assertEqual(response.validLetter(response, 'pizza', 'p')['isValid'], True)
 
     def testResponseIsFalse(self):
-        response.isValid = {'isValid': False, 'quantity': 0}
         self.assertEqual(response.validLetter(response, 'pizza', 't')['isValid'], False)
 
     def testResponseIsTrueIfLetterExistTwice(self):
         self.assertEqual(response.validLetter(response, 'pizza', 'z')['isValid'], True)
 
     def testIfIsNoneTheTimesThanShowLetter(self):
-        response.isValid = {'isValid': False, 'quantity': 0}
         response.validLetter(response, 'pizza', 't')
         self.assertEqual(response.isValid['quantity'], 0)
 

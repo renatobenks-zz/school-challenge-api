@@ -2,7 +2,7 @@
 
 _The API Data are from own API._
  
-##  1. ENDPOINTS:
+##  ENDPOINTS:
 ### Issues:
 - Issues about themes for user choice: `localhost:5000/api/v1/issues`. [Issues](localhost:5000/api/v1/issues) 
 - Specific issue: `localhost:5000/api/v1/issue/<id>`. [Issue](localhost:5000/api/v1/issue/1)
